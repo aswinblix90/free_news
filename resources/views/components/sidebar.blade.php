@@ -19,7 +19,7 @@
     <div class="widget">
         <h2 class="widget-title">Popular Categories</h2>
         <div class="link-widget">
-            <x-categories-listing/>
+            <x-categories-listing :categories="$categories"/>
         </div><!-- end link-widget -->
     </div><!-- end widget -->
 </div><!-- end sidebar -->
