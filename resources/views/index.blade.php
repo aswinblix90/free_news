@@ -3,7 +3,7 @@
 @section('content')
     <section class="section first-section">
         <div class="container-fluid">
-            <x-featured-post></x-featured-post>
+            <x-featured-post :posts="$posts"></x-featured-post>
         </div>
     </section>
     <section class="section wb">
@@ -12,10 +12,9 @@
                 <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
                     <div class="page-wrapper">
                         <div class="blog-list clearfix">
-                            <x-blog-box></x-blog-box>
-                            <x-blog-box></x-blog-box>
-                            <x-blog-box></x-blog-box>
-                            <x-blog-box></x-blog-box>
+                            @foreach ($posts->skip(3) as $post)
+                                <x-blog-box :post="$post"></x-blog-box>
+                            @endforeach
                         </div>
                     </div>
                     <hr class="invis">
@@ -28,7 +27,7 @@
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-                    <x-sidebar></x-sidebar>
+                    <x-sidebar :categories="$categories"></x-sidebar>
                 </div>
 
             </div>
