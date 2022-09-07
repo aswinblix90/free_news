@@ -1,4 +1,3 @@
-@props(['posts'])
 <div class="masonry-blog clearfix">
     <div class="left-side">
         <div class="masonry-box post-media">
@@ -6,11 +5,11 @@
             <div class="shadoweffect">
                 <div class="shadow-desc">
                     <div class="blog-meta">
-                        <span class="bg-aqua"><a href="blog-category-01.html" title="">{{$posts[0]->category->name}}</a></span>
-                        <h4><a href="garden-single.html" title="">{{$posts[0]->title}}</a>
+                        <span class="bg-aqua"><a href="blog-category-01.html" title="">Gardening</a></span>
+                        <h4><a href="garden-single.html" title="">How to choose high quality soil for your gardens</a>
                         </h4>
-                        <small><a href="garden-single.html" title="">{{$posts[0]->created_at->diffForHumans()}}</a></small>
-                        <small><a href="#" title="">by {{$posts[0]->author->name}}</a></small>
+                        <small><a href="garden-single.html" title="">21 July, 2017</a></small>
+                        <small><a href="#" title="">by Amanda</a></small>
                     </div><!-- end meta -->
                 </div><!-- end shadow-desc -->
             </div><!-- end shadow -->
@@ -23,10 +22,11 @@
             <div class="shadoweffect">
                 <div class="shadow-desc">
                     <div class="blog-meta">
-                        <span class="bg-aqua"><a href="blog-category-01.html" title="">{{$posts[1]->category->name}}</a></span>
-                        <h4><a href="garden-single.html" title="">{{$posts[1]->title}}</a></h4>
-                        <small><a href="garden-single.html" title="">{{$posts[2]->created_at->diffForHumans()}}</a></small>
-                        <small><a href="#" title="">by {{$posts[1]->author->name}}</a></small>
+                        <span class="bg-aqua"><a href="blog-category-01.html" title="">Outdoor</a></span>
+                        <h4><a href="garden-single.html" title="">You can create a garden with furniture in your
+                                home</a></h4>
+                        <small><a href="garden-single.html" title="">19 July, 2017</a></small>
+                        <small><a href="#" title="">by Amanda</a></small>
                     </div><!-- end meta -->
                 </div><!-- end shadow-desc -->
             </div><!-- end shadow -->
@@ -39,10 +39,11 @@
             <div class="shadoweffect">
                 <div class="shadow-desc">
                     <div class="blog-meta">
-                        <span class="bg-aqua"><a href="blog-category-01.html" title="">{{$posts[2]->category->name}}</a></span>
-                        <h4><a href="garden-single.html" title="">{{$posts[2]->title}}</a></h4>
-                        <small><a href="garden-single.html" title="">{{$posts[2]->created_at->diffForHumans()}}</a></small>
-                        <small><a href="#" title="">by {{$posts[2]->author->name}}</a></small>
+                        <span class="bg-aqua"><a href="blog-category-01.html" title="">Indoor</a></span>
+                        <h4><a href="garden-single.html" title="">The success of the 10 companies in the vegetable
+                                sector</a></h4>
+                        <small><a href="garden-single.html" title="">03 July, 2017</a></small>
+                        <small><a href="#" title="">by Jessica</a></small>
                     </div><!-- end meta -->
                 </div><!-- end shadow-desc -->
             </div><!-- end shadow -->
