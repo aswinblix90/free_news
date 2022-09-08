@@ -10,7 +10,7 @@
     </div><!-- end col -->
     <div class="blog-meta big-meta col-md-8">
         <span class="bg-aqua"><a href="garden-category.html" title="">{{$post->category->name}}</a></span>
-        <h4><a href="garden-single.html" title="">{{$post->title}}</a></h4>
+        <h4><a href="/posts/{{$post->slug}}" title="">{{$post->title}}</a></h4>
         <p>{{$post->desc}}</p>
         {{-- <small><a href="garden-category.html" title=""><i class="fa fa-eye"></i> 1887</a></small> --}}
         <small><a href="garden-single.html" title="">{{$post->created_at->diffForHumans()}}</a></small>

@@ -31,7 +31,7 @@
                             </div><!-- end meta --><!-- end post-sharing -->
                         </div><!-- end title -->
                         <div class="single-post-media">
-                            <img src="/upload/garden_single_01.jpg" alt="" class="img-fluid">
+                            <img src="/storage/" alt="" class="img-fluid">
                         </div><!-- end media -->
                         <div class="blog-content">  
                             <div class="pp">
@@ -116,7 +116,7 @@
                         </div><!-- end custom-box -->
                         <hr class="invis1">
                         <div class="custombox clearfix">
-                            <h4 class="small-title">3 Comments</h4>
+                            <h4 class="small-title">{{count($post->comments)}}  Comments</h4>
                             <div class="row">
                                 <div class="col-lg-12">
                                     <div class="comments-list">

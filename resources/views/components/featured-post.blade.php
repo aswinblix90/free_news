@@ -7,7 +7,7 @@
                 <div class="shadow-desc">
                     <div class="blog-meta">
                         <span class="bg-aqua"><a href="blog-category-01.html" title="">{{$posts[0]->category->name}}</a></span>
-                        <h4><a href="garden-single.html" title="">{{$posts[0]->title}}</a>
+                        <h4><a href="/posts/{{$posts[0]->slug}}" title="">{{$posts[0]->title}}</a>
                         </h4>
                         <small><a href="garden-single.html" title="">{{$posts[0]->created_at->diffForHumans()}}</a></small>
                         <small><a href="#" title="">by {{$posts[0]->author->name}}</a></small>
@@ -24,7 +24,7 @@
                 <div class="shadow-desc">
                     <div class="blog-meta">
                         <span class="bg-aqua"><a href="blog-category-01.html" title="">{{$posts[1]->category->name}}</a></span>
-                        <h4><a href="garden-single.html" title="">{{$posts[1]->title}}</a></h4>
+                        <h4><a href="/posts/{{$posts[1]->slug}}" title="">{{$posts[1]->title}}</a></h4>
                         <small><a href="garden-single.html" title="">{{$posts[2]->created_at->diffForHumans()}}</a></small>
                         <small><a href="#" title="">by {{$posts[1]->author->name}}</a></small>
                     </div><!-- end meta -->
@@ -40,7 +40,7 @@
                 <div class="shadow-desc">
                     <div class="blog-meta">
                         <span class="bg-aqua"><a href="blog-category-01.html" title="">{{$posts[2]->category->name}}</a></span>
-                        <h4><a href="garden-single.html" title="">{{$posts[2]->title}}</a></h4>
+                        <h4><a href="/posts/{{$posts[2]->slug}}" title="">{{$posts[2]->title}}</a></h4>
                         <small><a href="garden-single.html" title="">{{$posts[2]->created_at->diffForHumans()}}</a></small>
                         <small><a href="#" title="">by {{$posts[2]->author->name}}</a></small>
                     </div><!-- end meta -->
