@@ -146,12 +146,21 @@
                             <h4 class="small-title">Leave a Reply</h4>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <form class="form-wrapper">
-                                        <input type="text" class="form-control" placeholder="Your name">
-                                        <input type="text" class="form-control" placeholder="Email address">
-                                        <input type="text" class="form-control" placeholder="Website">
-                                        <textarea class="form-control" placeholder="Your comment"></textarea>
+                                    <form action="/posts/{{$post->slug}}" method="POST" class="form-wrapper">
+                                        @csrf
+                                        <div class="mt-2">
+                                            <input type="hidden" name="post_id" value="{{$post->id}}">
+                                            <input type="hidden" name="user_id" value="{{$post->author->id}}">
+                                            <input type="hidden" name="slug" value="{{$post->slug}}">
+                                            <textarea class="form-control" name="message" id="message" placeholder="Your comment"></textarea>
+                                            @error('message')
+                                                <p class="mt-2 alert alert-danger">
+                                                    {{$message}}
+                                                </p>
+                                            @enderror
+                                        </div>
                                         <button type="submit" class="btn btn-primary">Submit Comment</button>
+
                                     </form>
                                 </div>
                             </div>

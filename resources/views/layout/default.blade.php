@@ -47,7 +47,9 @@
 </head>
 
 <body>
-
+    @if (session()->has('status'))
+        <p class="alert alert-success">{{session('status')}}</p>
+    @endif
     <div id="wrapper">
         @include('includes.header')
             @yield('content')
