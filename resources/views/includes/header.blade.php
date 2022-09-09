@@ -12,7 +12,7 @@
 <div class="topbar-section">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6 hidden-xs-down">
+            <div class="col-lg-4 col-md-6 col-sm-6 hidden-sm-down">
                 <div class="topsocial">
                     <a href="#" data-toggle="tooltip" data-placement="bottom" title="Facebook"><i
                             class="fa fa-facebook"></i></a>
@@ -31,15 +31,33 @@
                 </div><!-- end social -->
             </div><!-- end col -->
 
-            <div class="col-lg-4 hidden-md-down">
+            <div class="col-lg-4">
+                <div class="text-center">
+                    @auth
+                        Welcome {{auth()->user()->username}}
+                    @endauth
+                </div>
             </div><!-- end col -->
 
-            <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                <div class="topsearch text-right">
-                    <a data-toggle="collapse" href="#collapseExample" aria-expanded="false"
-                        aria-controls="collapseExample"><i class="fa fa-search"></i> Search</a>
+            @guest
+            <div class="col-lg-1 col-md-6 col-sm-6 col-xs-12">
+                <div class="topsearch text-center">
+                    <a class="nav-link color-green-hover" href="/login">Login</a>
                 </div><!-- end search -->
-            </div><!-- end col -->
+            </div>
+            <div class="col-lg-1 col-md-6 col-sm-6 col-xs-12">
+                <div class="topsearch text-center">
+                    <a class="nav-link color-green-hover" href="/register">Register</a>
+                </div><!-- end search -->
+            </div>
+            @endguest
+            @auth
+                <div class="col-lg-1 col-md-6 col-sm-6 col-xs-12">
+                    <div class="topsearch text-center">
+                        <a class="nav-link color-green-hover" href="/logout">Logout</a>
+                    </div><!-- end search -->
+                </div>
+            @endauth
         </div><!-- end row -->
     </div><!-- end header-logo -->
 </div><!-- end topbar -->
@@ -49,7 +67,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="logo">
-                    <a href="garden-index.html"><img src="images/version/garden-logo.png" alt=""></a>
+                    <a href="/"><img src="images/version/garden-logo.png" alt=""></a>
                 </div><!-- end logo -->
             </div>
         </div><!-- end row -->
@@ -66,7 +84,7 @@
             <div class="collapse navbar-collapse justify-content-md-center" id="Forest Timemenu">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link color-green-hover" href="garden-index.html">Home</a>
+                        <a class="nav-link color-green-hover" href="/">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link color-green-hover" href="garden-category.html">Gardening</a>
