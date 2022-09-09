@@ -86,9 +86,11 @@
                     <li class="nav-item">
                         <a class="nav-link color-green-hover" href="/">Home</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link color-green-hover" href="garden-category.html">Gardening</a>
-                    </li>
+                    @auth
+                        <li class="nav-item">
+                            <a class="nav-link color-green-hover" href="/posts/create">Add post</a>
+                        </li>
+                    @endauth
                     <li class="nav-item">
                         <a class="nav-link color-green-hover" href="garden-category.html">Outdoor Living</a>
                     </li>

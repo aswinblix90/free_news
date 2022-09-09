@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class,'index']);
+Route::get('/posts/create', [PostController::class, 'showPostForm'])->middleware('auth');
+Route::post('/posts/create', [PostController::class, 'store'])->middleware('auth');
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 Route::post('/posts/{post:slug}', [PostController::class, 'postComment']);
 Route::get('/register', [RegistrationController::class, 'show']);
@@ -25,4 +27,5 @@ Route::post('/register', [RegistrationController::class, 'store']);
 Route::get('/login', [LoginController::class, 'show'])->name('login');
 Route::post('/login', [LoginController::class, 'create']);
 Route::get('/logout', [LoginController::class, 'destroy'])->middleware('auth');
+
 
