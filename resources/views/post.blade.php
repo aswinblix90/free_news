@@ -127,7 +127,7 @@
                                                         <img src="upload/author.jpg" alt="" class="rounded-circle">
                                                     </a>
                                                     <div class="media-body">
-                                                        <h4 class="media-heading user_name">Amanda Martines <small>5 days ago</small></h4>
+                                                        <h4 class="media-heading user_name">{{$comment->user->name}} <small>{{$comment->created_at->diffForHumans()}}</small></h4>
                                                         <p>{{$comment->message}}</p>
                                                         <a href="#" class="btn btn-primary btn-sm">Reply</a>
                                                     </div>
