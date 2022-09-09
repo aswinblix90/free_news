@@ -70,7 +70,11 @@
                                 </div><!-- end col -->
                                 <div class="col-lg-10 col-md-10 col-sm-10 col-xs-12">
                                     <h4><a href="#">{{$post->author->name}}</a></h4>
-                                    <p>Quisque sed tristique felis. Lorem <a href="#">visit my website</a> amet, consectetur adipiscing elit. Phasellus quis mi auctor, tincidunt nisl eget, finibus odio. Duis tempus elit quis risus congue feugiat. Thanks for stop Forest Time!</p>
+                                    @if (!$post->author->bio)
+                                        <p>no bio available</p>
+                                    @else
+                                        <p>{{$post->author->bio}}</p>
+                                    @endif
                                 </div><!-- end col -->
                             </div><!-- end row -->
                         </div><!-- end author-box -->

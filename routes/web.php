@@ -22,7 +22,7 @@ Route::get('/posts/{post:slug}', [PostController::class, 'show']);
 Route::post('/posts/{post:slug}', [PostController::class, 'postComment']);
 Route::get('/register', [RegistrationController::class, 'show']);
 Route::post('/register', [RegistrationController::class, 'store']);
-Route::get('/login', [LoginController::class, 'show']);
+Route::get('/login', [LoginController::class, 'show'])->name('login');
 Route::post('/login', [LoginController::class, 'create']);
 Route::get('/logout', [LoginController::class, 'destroy'])->middleware('auth');
 

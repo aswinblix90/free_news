@@ -21,7 +21,8 @@ class PostController extends Controller
     {
         // return 'test';
         if(empty(auth()->user())){
-            return Redirect::back()->with('status', 'Plz login to comment on post');
+            // return Redirect::back()->with('status', 'Plz login to comment on post');
+            return redirect('/login')->with('status', 'Please login before commenting on a post');
         }
         $attributes = $request->validate([
             'message' => ['required']
