@@ -33,27 +33,23 @@ class DatabaseSeeder extends Seeder
                 'name' => $role
             ]);
         }
-        // foreach ($categories as $category) {
-        //     Category::create([
-        //         'name' => $category,
-        //         'slug' => Str::slug($category)
-        //     ]);
-        // }
+        foreach ($categories as $category) {
+            Category::create([
+                'name' => $category,
+                'slug' => Str::slug($category)
+            ]);
+        }
         // Role::created([
         //     'name' => $role
         // ]);
-        Post::factory(5)->create();
-        Comment::factory(2)->create([
-            'post_id' => 1,
-            'user_id' => 2
-        ]);
-        // Comment::factory()->create([
+        // Post::factory(5)->create();
+        // Comment::factory(2)->create([
         //     'post_id' => 1,
         //     'user_id' => 2
         // ]);
-        Comment::factory(2)->create([
-            'post_id' => 3,
-            'user_id' => 4
-        ]);
+        // Comment::factory(2)->create([
+        //     'post_id' => 3,
+        //     'user_id' => 4
+        // ]);
     }
 }
