@@ -27,6 +27,6 @@ class UserController extends Controller
         $attributes['thumbnail'] = $request->file('thumbnail')->store('thumbnails');
         $user = User::create($attributes);
         Auth::login($user);
-        return redirect('/')->with('status', 'Login successfull');
+        return redirect('/')->with('status', 'Login successfull')->with('class', 'success');
     }
 }

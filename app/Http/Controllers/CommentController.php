@@ -16,7 +16,7 @@ class CommentController extends Controller
         // return 'test';
         if (empty(auth()->user())) {
             // return Redirect::back()->with('status', 'Plz login to comment on post');
-            return redirect('/login')->with('status', 'Please login before commenting on a post');
+            return redirect('/login')->with('status', 'Please login before commenting on a post')->with('class', 'warning');
         }
         $attributes = $request->validate([
             'message' => ['required']
@@ -24,6 +24,6 @@ class CommentController extends Controller
         $attributes['post_id'] = $request->post_id;
         $attributes['user_id'] = Auth::id();
         Comment::create($attributes);
-        return Redirect::back()->with('status', 'Comment posted successfully');
+        return Redirect::back()->with('status', 'Comment posted successfully')->with('class', 'success');
     }
 }

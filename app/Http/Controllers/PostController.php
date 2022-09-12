@@ -39,6 +39,6 @@ class PostController extends Controller
         $attributes['image'] = $request->file('image')->store('post');
         // dd($attributes);
         Post::create($attributes);
-        return redirect('/')->with('status', 'Your article posted successfully');
+        return redirect('/')->with('status', 'Your article posted successfully')->with('class', 'success');
     }
 }
