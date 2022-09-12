@@ -7,7 +7,6 @@ use App\Models\Comment;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Str;
 
 class PostController extends Controller
@@ -19,22 +18,8 @@ class PostController extends Controller
             'post' => $post
         ]);
     }
-    public function postComment(Request $request)
-    {
-        // return 'test';
-        if(empty(auth()->user())){
-            // return Redirect::back()->with('status', 'Plz login to comment on post');
-            return redirect('/login')->with('status', 'Please login before commenting on a post');
-        }
-        $attributes = $request->validate([
-            'message' => ['required']
-        ]);
-        $attributes['post_id'] = $request->post_id;
-        $attributes['user_id'] = Auth::id();
-        Comment::create($attributes);
-        return Redirect::back()->with('status','Comment posted successfully');
-    }
-    public function showPostForm()
+
+    public function create()
     {
         return view('create-post',[
             'categories' => Category::all()

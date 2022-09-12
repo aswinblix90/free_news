@@ -1,9 +1,9 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\SessionController;
 use App\Http\Controllers\PostController;
-use App\Http\Controllers\RegistrationController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,14 +18,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class,'index']);
-Route::get('/posts/create', [PostController::class, 'showPostForm'])->middleware('auth');
+Route::get('/posts/create', [PostController::class, 'create'])->middleware('auth');
 Route::post('/posts/create', [PostController::class, 'store'])->middleware('auth');
 Route::get('/posts/{post:slug}', [PostController::class, 'show']);
-Route::post('/posts/{post:slug}', [PostController::class, 'postComment']);
-Route::get('/register', [RegistrationController::class, 'show']);
-Route::post('/register', [RegistrationController::class, 'store']);
-Route::get('/login', [LoginController::class, 'show'])->name('login');
-Route::post('/login', [LoginController::class, 'create']);
-Route::get('/logout', [LoginController::class, 'destroy'])->middleware('auth');
+Route::post('/posts/{post:slug}', [CommentController::class, 'create']);
+Route::get('/register', [UserController::class, 'show']);
+Route::post('/register', [UserController::class, 'store']);
+Route::get('/login', [SessionController::class, 'show'])->name('login');
+Route::post('/login', [SessionController::class, 'create']);
+Route::get('/logout', [SessionController::class, 'destroy'])->middleware('auth');
 
 

@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 
-class RegistrationController extends Controller
+class UserController extends Controller
 {
     //
     public function show()
@@ -18,7 +18,7 @@ class RegistrationController extends Controller
         $attributes = $request->validate([
             'name' => ['required', 'min:3', 'max:255'],
             'email' => ['required', 'email', 'min:12', 'max:255'],
-            'username' => ['required', 'min:3','max:255'],
+            'username' => ['required', 'min:3', 'max:255'],
             'password' => ['required', 'min:6', 'max:255'],
             // 'thumbnail' => ['mimes:jpg,bmp,png'],
             'bio' => ['max:255']
@@ -28,8 +28,5 @@ class RegistrationController extends Controller
         $user = User::create($attributes);
         Auth::login($user);
         return redirect('/')->with('status', 'Login successfull');
-
-
-
     }
 }
